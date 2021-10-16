@@ -5,7 +5,7 @@
 
 \i entities/residents.sql
 \i entities/gaits.sql
-
+\i entities/kingdoms.sql
 
 \i entities/registrations.sql
 
@@ -23,8 +23,6 @@
 
 \i entities/crowns.sql
 
-
-\i entities/kingdoms.sql
 
 
 \i entities/leaders.sql

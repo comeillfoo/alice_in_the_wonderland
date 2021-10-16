@@ -3,10 +3,10 @@ CREATE OR REPLACE FUNCTION leader_suit_check() RETURNS trigger AS $leader_suit_c
         leader_suit integer;
         kingdom_suit integer;
     BEGIN
-        leader_suit := SELECT fk_suit_id FROM residents WHERE id=NEW.fk_resident_id;
-        kingdom_suit := SELECT fk_suit_id FROM kingdoms WHERE id=NEW.fk_kingdom_id;
+        SELECT fk_suit_id FROM residents WHERE id=NEW.fk_resident_id INTO leader_suit;
+        SELECT fk_suit_id FROM kingdoms WHERE id=NEW.fk_kingdom_id INTO kingdom_suit;
         IF ( leader_suit != kingdom_suit ) THEN
-            RAISE EXCEPTION "leader's suit must equal to kingdom's suit ( expected: %; actual: % )", leader_suit, kingdom_suit; 
+            RAISE EXCEPTION 'leaders suit must equal to kingdoms suit ( expected: %; actual: % )', leader_suit, kingdom_suit;
         END IF;
 
         RETURN NEW;
