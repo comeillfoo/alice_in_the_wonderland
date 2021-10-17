@@ -1,4 +1,3 @@
 CREATE TABLE IF NOT EXISTS types (
-    id serial PRIMARY KEY,
-    name text NOT NULL
+    name text PRIMARY KEY
 );
