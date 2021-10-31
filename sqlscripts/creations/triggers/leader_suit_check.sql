@@ -13,5 +13,5 @@ CREATE OR REPLACE FUNCTION leader_suit_check() RETURNS trigger AS $leader_suit_c
     END;
 $leader_suit_check$ LANGUAGE plpgsql;
 
-CREATE TRIGGER leader_suit_check BEFORE INSERT OR UPDATE ON leaders
+CREATE OR REPLACE TRIGGER leader_suit_check BEFORE INSERT OR UPDATE ON leaders
     FOR EACH ROW EXECUTE PROCEDURE leader_suit_check();

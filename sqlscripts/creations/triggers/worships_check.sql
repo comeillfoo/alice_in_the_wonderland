@@ -10,5 +10,5 @@ CREATE OR REPLACE FUNCTION worships_check() RETURNS trigger AS $worships_check$
     END;
 $worships_check$ LANGUAGE plpgsql;
 
-CREATE TRIGGER worships_check BEFORE INSERT OR UPDATE ON worships
+CREATE OR REPLACE TRIGGER worships_check BEFORE INSERT OR UPDATE ON worships
     FOR EACH ROW EXECUTE PROCEDURE worships_check();
