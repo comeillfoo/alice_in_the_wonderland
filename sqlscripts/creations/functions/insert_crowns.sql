@@ -15,7 +15,7 @@ $BODY$
             RAISE EXCEPTION 'clothes( % ) already linked to crown or cloth dont have appropriate type', iclothes;
         END IF;
 
-        IF NOT EXISTS( SELECT 1 FROM clothes WHERE fk_clothes_id = iclothes ) THEN
+        IF NOT EXISTS( SELECT 1 FROM clothes WHERE id = iclothes ) THEN
             SELECT "insert_clothes"( type_nm => 'головной убор' );
             iclothes := max( id ) FROM clothes;
         END IF;
