@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION insert_colour (
-    IN cname text,
+    IN cname text
 ) RETURNS void AS
 $BODY$
     BEGIN
