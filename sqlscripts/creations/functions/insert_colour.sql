@@ -11,7 +11,7 @@ $BODY$
 
         -- otherwise insert valid data into table
         INSERT INTO colours ( name )
-            VALUES ( name );
+            VALUES ( cname );
     END;
 $BODY$
 LANGUAGE 'plpgsql' VOLATILE;
