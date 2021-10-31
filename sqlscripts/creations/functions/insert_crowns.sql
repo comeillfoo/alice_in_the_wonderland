@@ -11,7 +11,7 @@ $BODY$
 
         -- check if the clothes_id already in inappropriate use
         IF EXISTS( SELECT 1 FROM crowns WHERE fk_clothes_id = iclothes ) OR
-        EXISTS( SELECT 1 FROM clothes WHERE id = fk_clothes_id AND fk_type_name != 'головной убор' ) THEN
+        EXISTS( SELECT 1 FROM clothes WHERE id = iclothes AND fk_type_name != 'головной убор' ) THEN
             RAISE EXCEPTION 'clothes( % ) already linked to crown or cloth dont have appropriate type', iclothes;
         END IF;
 
