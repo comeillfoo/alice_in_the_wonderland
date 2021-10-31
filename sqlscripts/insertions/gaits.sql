@@ -1,5 +1,7 @@
-INSERT INTO gaits (id, name, fk_resident_id)
-VALUES
-	( DEFAULT , 'soldier gate' , 1 ),
-	( DEFAULT , 'royal gate' , 2 ),
-	( DEFAULT , 'other' , 3 );
+INSERT INTO gaits ( id, name, fk_resident_id )
+    VALUES
+        ( DEFAULT,        "шагом", NULL ),
+        ( DEFAULT,       "плавно", NULL ),
+        ( DEFAULT,     "величаво", NULL ),
+        ( DEFAULT,   "вприпрыжку", NULL ),
+        ( DEFAULT, "сломя голову", NULL );

@@ -1,5 +1,6 @@
-INSERT INTO kingdoms (id, fk_suit_name, number_of_residents)
-VALUES
-	( DEFAULT, 'трефы' , 1 ),
-	( DEFAULT, 'червы' , 1 ),
-	( DEFAULT, 'пики' , 1 );
+INSERT INTO kingdoms ( id, fk_suit_name, number_of_residents )
+    VALUES
+        ( DEFAULT, "червы", 0 ),
+        ( DEFAULT, "бубны", 0 ),
+        ( DEFAULT, "трефы", 0 ),
+        ( DEFAULT, "пики",  0 );
