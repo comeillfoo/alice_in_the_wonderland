@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION insert_clothes (
     IN resident integer DEFAULT NULL,
-    IN pattern integer DEFAULT 0,
+    IN pattern integer DEFAULT 1,
     IN colour text DEFAULT 'GreenYellow',
     IN density integer DEFAULT 0,
     IN type_nm text DEFAULT 'торс'

@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION insert_crowns (
     IN ivalue integer DEFAULT 0,
-    IN iclothes integer DEFAULT 0
+    IN iclothes integer DEFAULT 1
 ) RETURNS void AS
 $BODY$
     BEGIN
