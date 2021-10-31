@@ -16,7 +16,7 @@ $BODY$
         END IF;
 
         IF NOT EXISTS( SELECT 1 FROM clothes WHERE id = iclothes ) THEN
-            SELECT "insert_clothes"( type_nm => 'головной убор' );
+            PERFORM "insert_clothes"( type_nm => 'головной убор' );
             iclothes := max( id ) FROM clothes;
         END IF;
 
