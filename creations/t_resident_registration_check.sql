@@ -15,5 +15,5 @@ CREATE OR REPLACE FUNCTION resident_registration_check() RETURNS trigger AS $res
     END;
 $resident_registration_check$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER resident_registration_check BEFORE INSERT OR UPDATE ON residences
+CREATE TRIGGER resident_registration_check BEFORE INSERT OR UPDATE ON residences
     FOR EACH ROW EXECUTE PROCEDURE resident_registration_check();
