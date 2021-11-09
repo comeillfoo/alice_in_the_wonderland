@@ -9,3 +9,5 @@
 \i f_insert_kingdoms.sql
 
 \i f_insert_leaders.sql
+
+\i f_insert_patterns.sql

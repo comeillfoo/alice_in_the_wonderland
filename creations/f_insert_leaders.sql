@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION insert_leaders(
-	IN i_kingdom_id integer DEFAULT 0,
+	IN i_kingdom_id integer DEFAULT 1,
 	IN i_kingdom_enddate date DEFAULT NULL,
-	IN i_resident_id integer DEFAULT 0,
+	IN i_resident_id integer DEFAULT 1,
 	IN i_crown_id integer DEFAULT NULL
 ) RETURNS void AS
 $BODY$
@@ -18,7 +18,7 @@ $BODY$
         END IF;
 	--check resident and kingdom suit ?
 
-	INSERT INTO LEADERS(id, fk_kingdom_id, kingdom_reign_enddate, fk_resident_id, fk_krown_id)
+	INSERT INTO LEADERS(id, fk_kingdom_id, kingdom_reign_enddate, fk_resident_id, fk_crown_id)
 		VALUES(DEFAULT, i_kingdom_id, i_kingdom_enddate, i_resident_id, i_crown_id);
 
 	END;
