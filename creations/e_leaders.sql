@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS leaders (
     id serial PRIMARY KEY,
-    fk_kingdom_id serial UNIQUE,
+    fk_kingdom_id serial,
     FOREIGN KEY( fk_kingdom_id ) REFERENCES kingdoms( id ),
     kingdom_reign_enddate date,
     fk_resident_id serial UNIQUE,

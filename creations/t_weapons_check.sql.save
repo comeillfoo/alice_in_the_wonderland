@@ -1,0 +1,48 @@
+CREATE OR REPLACE FUNCTION weapons_check() RETURNS trigger AS $weapons_check$
+        DECLARE
+                kingdom_tool text;
+                resident_tool text;
+        BEGIN
+                SELECT residents.id FROM residents WHERE residents.id=NEW.fk_resident_id INTO resident_tool;
+                SELECT kingdoms.id FROM kingdoms WHERE kingdoms.id=NEW.fk_kingdom_id INTO kingdom_tool;
+                IF ( leader_suit IS NULL or  kingdom_suit IS NULL ) THEN
+                        RAISE EXCEPTION '( resident: %; kingdom: % )', resident_suit, kingdom_suit;
+                END IF;
+
+                RETURN NEW;
+        END;
+
+$weapon  GNU nano 4.8                                                                                  t_tools_check.sql                                                                                           
+CREATE OR REPLACE FUNCTION tools_check() RETURNS trigger AS $tools_check$
+        DECLARE
+                kingdom_tool text;
+                resident_tool text;
+        BEGIN
+                SELECT residents.id FROM residents WHERE residents.id=NEW.fk_resident_id INTO resident_tool;
+                SELECT kingdoms.id FROM kingdoms WHERE kingdoms.id=NEW.fk_kingdom_id INTO kingdom_tool;
+                IF ( leader_suit IS NULL or  kingdom_suit IS NULL ) THEN
+                        RAISE EXCEPTION '( resident: %; kingdom: % )', resident_suit, kingdom_suit;
+                END IF;
+
+                RETURN NEW;
+        END;
+
+$tools_check$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER tools_check BEFORE INSERT OR UPDATE ON tools
+        FOR EACH ROW EXECUTE PROCEDURE tools_check();
+
+
+
+
+s_check$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER weapons_check BEFORE INSERT OR UPDATE ON tools
+        FOR EACH ROW EXECUTE PROCEDURE tools_check();
+
+
+
+
+

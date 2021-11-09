@@ -7,3 +7,5 @@
 \i f_insert_gaits.sql
 
 \i f_insert_kingdoms.sql
+
+\i f_insert_leaders.sql
