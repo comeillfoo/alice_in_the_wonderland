@@ -7,13 +7,11 @@ $BODY$
         DECLARE old_leader_crown_id integer := ( SELECT fk_crown_id FROM leaders WHERE id = old_leader_id );
 
         UPDATE leaders
-        SET kingdom_reign_enddate = CURRENT_DATE,
-            fk_crown_id = NULL
+        SET ( kingdom_reign_enddate, fk_crown_id ) = ( CURRENT_DATE, NULL )
         WHERE id = old_leader_id;
-        
+
         UPDATE leaders
-        SET kingdom_reign_enddate = NULL,
-            fk_crown_id = old_leader_crown_id
+        SET ( kingdom_reign_enddate, fk_crown_id = ( NULL, old_leader_crown_id )
         WHERE id = new_leader_id;
     END;
 $BODY$
