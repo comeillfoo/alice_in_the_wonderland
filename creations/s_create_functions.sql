@@ -12,4 +12,4 @@
 
 \i f_insert_patterns.sql
 
-\i f_coronation.sql
+\i f_coronate.sql
