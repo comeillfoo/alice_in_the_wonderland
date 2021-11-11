@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION coronate (
-    IN new_leader_id serial
+    IN new_leader_id integer
 ) RETURNS void AS
 $BODY$
     BEGIN
