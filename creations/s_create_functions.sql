@@ -11,3 +11,5 @@
 \i f_insert_leaders.sql
 
 \i f_insert_patterns.sql
+
+\i f_coronation.sql
