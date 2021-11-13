@@ -9,3 +9,5 @@ DROP FUNCTION IF EXISTS insert_gaits( text, integer ) CASCADE;
 DROP FUNCTION IF EXISTS insert_kingdoms( varchar(16), integer ) CASCADE;
 
 DROP FUNCTION IF EXISTS coronate( integer ) CASCADE;
+
+DROP FUNCTION IF EXISTS cloth_buy( integer, integer ) CASCADE;

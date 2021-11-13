@@ -13,3 +13,5 @@
 \i f_insert_patterns.sql
 
 \i f_coronate.sql
+
+\i f_buy_cloth.sql
