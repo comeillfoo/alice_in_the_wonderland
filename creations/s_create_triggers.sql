@@ -4,3 +4,5 @@
 \i t_resident_registration_check.sql
 
 \i t_worships_check.sql
+
+\i t_crowns_check.sql
