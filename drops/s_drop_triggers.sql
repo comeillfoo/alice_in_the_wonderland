@@ -5,4 +5,4 @@ DROP TRIGGER IF EXISTS resident_registration_check on residences CASCADE;
 
 DROP TRIGGER IF EXISTS worships_check on worships CASCADE;
 
-\i s_drop_functions_trigger.sql
+\i s_drop_functions_triggers.sql
