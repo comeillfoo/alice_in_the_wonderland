@@ -8,7 +8,7 @@ $BODY$
         new_registration_id integer;
     BEGIN
         IF EXISTS( SELECT 1 FROM registrations WHERE id = old_registration_id AND fk_kingdom_id = dest_kingdom ) THEN
-            RAISE INFO 'residents( % ) is already registrated in desired kingdom', resident;
+            RAISE INFO 'residents( % ) is already registered in desired kingdom', resident;
             RETURN;
         END IF;
 
