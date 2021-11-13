@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION crowns_check() RETURNS trigger AS $crowns_check$
     BEGIN
-        IF ( 'головной убор' <> ( SELECT fk_type_id FROM clothes WHERE id=NEW.fk_clothes_id ) ) THEN
+        IF ( 'головной убор' <> ( SELECT fk_type_name FROM clothes WHERE id=NEW.fk_clothes_id ) ) THEN
             RAISE EXCEPTION 'clothes ( % ) is not a hat', NEW.fk_clothes_id;
         END IF;
         RETURN NEW;
