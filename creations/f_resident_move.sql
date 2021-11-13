@@ -6,8 +6,8 @@ $BODY$
     DECLARE
         old_registration_id integer := ( SELECT id FROM registrations WHERE id IN ( SELECT fk_registration_id FROM residences WHERE fk_resident_id = resident ) AND expiry_date IS NULL );
         new_registration_id integer;
-        weapon ROW;
-        tool ROW;
+        weapon RECORD;
+        tool RECORD;
     BEGIN
         IF EXISTS( SELECT 1 FROM registrations WHERE id = old_registration_id AND fk_kingdom_id = dest_kingdom ) THEN
             RAISE INFO 'residents( % ) is already registered in desired kingdom', resident;
