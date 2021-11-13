@@ -14,4 +14,8 @@ DROP FUNCTION IF EXISTS cloth_buy( integer, integer ) CASCADE;
 
 DROP FUNCTION IF EXISTS cloth_sell( integer, integer ) CASCADE;
 
-DROP FUNCTION IF EXISTS move_to( integer, integer ) CASCADE;
+DROP FUNCTION IF EXISTS tool_move( integer, integer, integer ) CASCADE;
+
+DROP FUNCTION IF EXISTS weapon_move( integer, integer, integer ) CASCADE;
+
+DROP FUNCTION IF EXISTS resident_move( integer, integer, integer ) CASCADE;

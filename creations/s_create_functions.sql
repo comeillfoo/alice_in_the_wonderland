@@ -18,5 +18,8 @@
 
 \i f_cloth_sell.sql
 
-\i f_move_to.sql
+\i f_tool_move.sql
 
+\i f_weapon_move.sql
+
+\i f_resident_move.sql
