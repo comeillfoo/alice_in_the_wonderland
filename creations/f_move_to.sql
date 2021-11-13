@@ -13,7 +13,7 @@ $BODY$
         END IF;
 
         DELETE FROM residences WHERE fk_resident_id = resident AND fk_registration_id = old_registration_id;
-        new_registration_id := ( INSERT INTO registrations VALUES ( DEFAULT, dest_kingdom, now(), NULL ) RETURNING id );
+        INSERT INTO registrations VALUES ( DEFAULT, dest_kingdom, now(), NULL ) RETURNING id INTO new_registration_id;
         INSERT INTO residences VALUES ( resident, new_registration_id ); 
     END;
 $BODY$
