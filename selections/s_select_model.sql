@@ -1,37 +1,37 @@
 -- entities for residents
-TABLE suits;
-TABLE sexes;
-TABLE roles;
+SELECT * FROM suits LIMIT 10;
+SELECT * FROM sexes LIMIT 10;
+SELECT * FROM roles LIMIT 10;
 
-TABLE residents;
-TABLE gaits;
-TABLE kingdoms;
+SELECT * FROM residents LIMIT 10;
+SELECT * FROM gaits LIMIT 10;
+SELECT * FROM kingdoms LIMIT 10;
 
-TABLE registrations;
+SELECT * FROM registrations LIMIT 10;
 
 
-TABLE residences;
+SELECT * FROM residences LIMIT 10;
 
 
 -- entities for clothes
-TABLE types;
-TABLE colours;
-TABLE patterns;
+SELECT * FROM types LIMIT 10;
+SELECT * FROM colours LIMIT 10;
+SELECT * FROM patterns LIMIT 10;
 
-TABLE clothes;
-
-
-TABLE crowns;
+SELECT * FROM clothes LIMIT 10;
 
 
-
-TABLE leaders;
-
-
-TABLE worships;
+SELECT * FROM crowns LIMIT 10;
 
 
-TABLE tools;
+
+SELECT * FROM leaders LIMIT 10;
 
 
-TABLE weapons;
+SELECT * FROM worships LIMIT 10;
+
+
+SELECT * FROM tools LIMIT 10;
+
+
+SELECT * FROM weapons LIMIT 10;
