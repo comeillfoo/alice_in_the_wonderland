@@ -14,4 +14,7 @@
 
 \i f_coronate.sql
 
-\i f_buy_cloth.sql
+\i f_cloth_buy.sql
+
+\i f_cloth_sell.sql
+
