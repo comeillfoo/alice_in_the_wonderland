@@ -1,6 +1,3 @@
--- for readability
-\x
-
 -- entities for residents
 SELECT * FROM suits LIMIT 10;
 SELECT * FROM sexes LIMIT 10;
