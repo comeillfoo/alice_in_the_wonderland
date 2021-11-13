@@ -1,13 +1,13 @@
 CREATE OR REPLACE FUNCTION tools_check() RETURNS trigger AS $tools_check$
 	DECLARE
-		kingdom_tool text;
-		resident_tool text;
+		kingdom_tool integer;
+		resident_tool integer;
 	BEGIN
 		SELECT residents.id FROM residents WHERE residents.id=NEW.fk_resident_id INTO resident_tool;
-	        SELECT kingdoms.id FROM kingdoms WHERE kingdoms.id=NEW.fk_kingdom_id INTO kingdom_tool;
+	    SELECT kingdoms.id FROM kingdoms WHERE kingdoms.id=NEW.fk_kingdom_id INTO kingdom_tool;
 		IF ( leader_tool IS NULL or  kingdom_tool IS NULL ) THEN
             		RAISE EXCEPTION '( resident: %; kingdom: % )', resident_tool, kingdom_tool;
-        	END IF;
+        END IF;
 
         	RETURN NEW;
 	END;
