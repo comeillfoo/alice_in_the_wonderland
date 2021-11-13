@@ -3,3 +3,7 @@
 ## Debugged functions
 
 * coronate
+
+## Todo functions
+
+* проверять, что корона ссылается на одежду типа `'головной убор'`
