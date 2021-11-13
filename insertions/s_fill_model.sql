@@ -13,4 +13,5 @@
 \i e_residences.sql
 \i e_leaders.sql
 \i e_gaits.sql
-
+\i e_tools.sql
+\i e_weapons.sql
