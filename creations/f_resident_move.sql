@@ -18,17 +18,17 @@ $BODY$
 
         IF ( 'солдат' = ( SELECT fk_role_id FROM residents WHERE id = resident ) ) THEN
             -- move all weapons
-            FOR weapon_id IN SELECT id FROM weapons WHERE fk_resident_id = resident
+            FOR weapon IN SELECT * FROM weapons WHERE fk_resident_id = resident
             LOOP
-                PERFORM weapon_move( resident, weapon_id, dest_kingdom );
+                PERFORM weapon_move( resident, weapon.id, dest_kingdom );
             END LOOP;
         END IF;
 
         IF ( 'садовник' = ( SELECT fk_role_id FROM residents WHERE id = resident ) ) THEN
             -- move all tools
-            FOR tool_id IN SELECT id FROM tools WHERE fk_resident_id = resident
+            FOR tool IN SELECT * FROM tools WHERE fk_resident_id = resident
             LOOP
-                PERFORM tool_move( resident, tool_id, dest_kingdom );
+                PERFORM tool_move( resident, tool.id, dest_kingdom );
             END LOOP;
         END IF;
     END;
