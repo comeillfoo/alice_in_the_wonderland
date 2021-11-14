@@ -1,1 +1,1 @@
-DROP IF EXISTS FUNCTION perf_indeces ( ) CASCADE;
+DROP FUNCTION IF EXISTS perf_indeces ( ) CASCADE;
