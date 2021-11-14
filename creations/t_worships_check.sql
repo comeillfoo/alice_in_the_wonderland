@@ -6,7 +6,7 @@ $worships_check$
         courtier_resident_role varchar( 24 ) := ( SELECT fk_role_name FROM residents WHERE id=NEW.fk_courtier_id );
     BEGIN
         -- check if trying to serve themself
-        IF ( leader_resident_id = NEW.fk_resident_id ) THEN
+        IF ( leader_resident_id = NEW.fk_courtier_id ) THEN
             RAISE EXCEPTION 'leaders cant serve themself [ leader_id: % ]', NEW.fk_leader_id;
         END IF;
 
