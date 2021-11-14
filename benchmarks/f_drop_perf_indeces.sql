@@ -1,0 +1,1 @@
+DROP IF EXISTS FUNCTION perf_indeces ( ) CASCADE;
