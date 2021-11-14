@@ -1,3 +1,5 @@
+\i f_expired_registrations_delete.sql
+
 \i f_insert_clothes.sql
 
 \i f_insert_colour.sql
