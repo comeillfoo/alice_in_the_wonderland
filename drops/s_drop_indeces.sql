@@ -11,6 +11,6 @@ DROP INDEX IF EXISTS tools_fk_kingdom_id CASCADE;
 DROP INDEX IF EXISTS weapons_fk_kingdom_id CASCADE;
 
 -- common indeces
-DROP INDEX IF EXISTS residences_expiry_date CASCADE;
+DROP INDEX IF EXISTS registrations_expiry_date CASCADE;
 DROP INDEX IF EXISTS leaders_kingdom_reign_enddate CASCADE;
 DROP INDEX IF EXISTS patterns_description CASCADE;
