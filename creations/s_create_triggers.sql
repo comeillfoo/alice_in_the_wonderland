@@ -7,6 +7,8 @@
 
 \i t_leader_suit_check.sql
 
+\i t_regdates_check.sql
+
 \i t_resident_registration_check.sql
 
 \i t_tool_owner_check.sql
