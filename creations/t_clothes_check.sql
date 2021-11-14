@@ -6,7 +6,7 @@ $clothes_check$
         resident_role varchar( 24 ) := ( SELECT fk_role_name FROM residents WHERE id=NEW.fk_resident_id );
     BEGIN
         IF ( ( maybe_crown_id IS NOT NULL ) AND ( resident_role IS NOT NULL ) AND ( resident_role <> 'правитель' ) ) THEN
-            RAISE EXCEPTION 'only resident with the special role can wear a crown';
+            RAISE EXCEPTION 'only residents with the special role can wear a crown';
         END IF;
 
         RETURN NEW;
