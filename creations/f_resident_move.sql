@@ -17,6 +17,7 @@ $BODY$
         DELETE FROM residences WHERE fk_resident_id = resident AND fk_registration_id = old_registration_id;
         INSERT INTO registrations VALUES ( DEFAULT, dest_kingdom, now(), NULL ) RETURNING id INTO new_registration_id;
         INSERT INTO residences VALUES ( resident, new_registration_id );
+        DELETE FROM residences WHERE fk_resident_id = resident AND fk_registration_id IN ( SELECT id FROM registrations WHERE fk_kingdom_id = dest_kingdom AND expiry_date IS NOT NULL );
 
         IF ( 'солдат' = ( SELECT fk_role_id FROM residents WHERE id = resident ) ) THEN
             -- move all weapons
