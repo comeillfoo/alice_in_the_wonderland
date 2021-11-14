@@ -15,3 +15,4 @@
 \i e_gaits.sql
 \i e_tools.sql
 \i e_weapons.sql
+\i e_worships.sql
