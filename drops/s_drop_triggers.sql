@@ -17,4 +17,6 @@ DROP TRIGGER IF EXISTS worships_check ON worships CASCADE;
 
 DROP TRIGGER IF EXISTS regdates_check ON registrations CASCADE;
 
+DROP TRIGGER IF EXISTS residents_count_update ON residences CASCADE;
+
 \i s_drop_functions_triggers.sql

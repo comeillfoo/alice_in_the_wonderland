@@ -11,6 +11,8 @@
 
 \i t_resident_registration_check.sql
 
+\i t_residents_count_update.sql
+
 \i t_tool_owner_check.sql
 
 \i t_weapon_owner_check.sql

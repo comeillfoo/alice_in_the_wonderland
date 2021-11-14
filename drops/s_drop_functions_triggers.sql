@@ -16,3 +16,5 @@ DROP FUNCTION IF EXISTS weapon_owner_check( ) CASCADE;
 DROP FUNCTION IF EXISTS worships_check( ) CASCADE;
 
 DROP FUNCTION IF EXISTS regdates_check( ) CASCADE;
+
+DROP FUNCTION IF EXISTS residents_count_update( ) CASCADE;
