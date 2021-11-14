@@ -11,6 +11,6 @@ CREATE INDEX tools_fk_kingdom_id ON tools ( fk_kingdom_id );
 CREATE INDEX weapons_fk_kingdom_id ON weapons ( fk_kingdom_id );
 
 -- common indeces
-CREATE INDEX residences_expiry_date ON residences ( expiry_date );
+CREATE INDEX registrations_expiry_date ON registrations ( expiry_date );
 CREATE INDEX leaders_kingdom_reign_enddate ON leaders ( kingdom_reign_enddate );
 CREATE INDEX patterns_description ON patterns ( description );
