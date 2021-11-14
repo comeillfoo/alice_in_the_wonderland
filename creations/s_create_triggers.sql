@@ -1,4 +1,6 @@
 -- creating triggers
+\i t_clothes_check.sql
+
 \i t_crowns_check.sql
 
 \i t_leader_role_check.sql

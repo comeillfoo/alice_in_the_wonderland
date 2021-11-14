@@ -1,4 +1,6 @@
 -- drop functions of FUNCTIONs
+DROP FUNCTION IF EXISTS clothes_check( ) CASCADE;
+
 DROP FUNCTION IF EXISTS crowns_check( ) CASCADE;
 
 DROP FUNCTION IF EXISTS leader_role_check( ) CASCADE;

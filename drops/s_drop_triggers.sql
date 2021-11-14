@@ -1,4 +1,6 @@
 -- drop triggers
+DROP TRIGGER IF EXISTS clothes_check on clothes CASCADE;
+
 DROP TRIGGER IF EXISTS crowns_check on crowns CASCADE;
 
 DROP TRIGGER IF EXISTS leader_role_check on leaders CASCADE;
