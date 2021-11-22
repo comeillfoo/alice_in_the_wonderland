@@ -1,0 +1,1 @@
+DROP VIEW IF EXISTS leaders_show_generations CASCADE;

@@ -1,0 +1,1 @@
+CREATE OR REPLACE VIEW leaders_show_generations AS SELECT leaders.id, residents.name, residents.fk_sex_name, kingdoms.fk_suit_name, leaders.kingdom_reign_enddate FROM leaders JOIN residents ON leaders.fk_resident_id = residents.id JOIN kingdoms ON leaders.fk_kingdom_id = kingdoms.id GROUP BY fk_kingdom_id ORDER BY kingdom_reign_enddate;
