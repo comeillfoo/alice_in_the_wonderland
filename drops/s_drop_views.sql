@@ -7,3 +7,5 @@ DROP VIEW IF EXISTS kingdoms_show_residents CASCADE;
 DROP VIEW IF EXISTS kingdoms_count_gardeners CASCADE;
 DROP VIEW IF EXISTS kingdoms_count_soldiers CASCADE;
 DROP VIEW IF EXISTS kingdoms_count_courtiers CASCADE;
+DROP VIEW IF EXISTS kingdoms_count_males CASCADE;
+DROP VIEW IF EXISTS kingdoms_count_females CASCADE;
