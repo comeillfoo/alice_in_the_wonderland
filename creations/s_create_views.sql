@@ -29,3 +29,10 @@ CREATE OR REPLACE VIEW clothes_catalogue AS
         FROM clothes
             JOIN patterns ON clothes.fk_pattern_id = patterns.id
             WHERE clothes.fk_resident_id IS NULL;
+
+CREATE OR REPLACE VIEW kingdoms_show_residents AS
+    SELECT *
+        FROM residents
+            JOIN residences ON residents.id = residents.fk_resident_id
+            JOIN registrations ON residences.fk_registration_id = registrations.id
+            ORDER BY registrations.fk_kingdom_id;
