@@ -5,3 +5,5 @@
 \i s_drop_functions.sql
 
 \i s_drop_indeces.sql
+
+\i s_drop_views.sql
