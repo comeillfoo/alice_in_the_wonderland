@@ -35,5 +35,5 @@ CREATE OR REPLACE VIEW kingdoms_show_residents AS
         FROM residents
             JOIN residences ON residents.id = residences.fk_resident_id
             JOIN registrations ON residences.fk_registration_id = registrations.id
-            JOIN kingdoms ON registrations.fk_kingdom_id = kingdoms.id
+            JOIN kingdoms ON kingdoms.id = registrations.fk_kingdom_id 
             ORDER BY registrations.fk_kingdom_id;
