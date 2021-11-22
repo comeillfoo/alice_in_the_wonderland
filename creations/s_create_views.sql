@@ -6,6 +6,7 @@ CREATE OR REPLACE VIEW leaders_show_generations AS
             ORDER BY kingdoms.fk_suit_name, leaders.kingdom_reign_enddate DESC;
 
 CREATE OR REPLACE VIEW kingdoms_count_tools AS
-    SELECT fk_kingdom_id, count( id )
+    SELECT tools.fk_kingdom_id, kingdoms.fk_suit_name, count( id ) AS tools_number
         FROM tools
-        GROUP BY fk_kingdom_id;
+            JOIN kingdoms ON tools.fk_kingdom_id = kingdoms.id
+            GROUP BY fk_kingdom_id;
