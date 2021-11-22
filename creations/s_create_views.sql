@@ -41,4 +41,5 @@ CREATE OR REPLACE VIEW kingdoms_show_residents AS
 CREATE OR REPLACE VIEW kingdoms_count_gardeners AS
     SELECT kingdom, count( role ) AS gardeners
         FROM kingdoms_show_residents
-        GROUP BY role HAVING role = 'садовник';
+        WHERE role = 'садовник'
+        GROUP BY kingdom;
