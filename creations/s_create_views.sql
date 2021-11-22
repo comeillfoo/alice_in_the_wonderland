@@ -25,7 +25,7 @@ CREATE OR REPLACE VIEW kingdoms_count_weapons AS
             GROUP BY kingdoms.fk_suit_name;
 
 CREATE OR REPLACE VIEW clothes_catalogue AS
-    SELECT clothes.id AS item, patterns.description, clothes.fk_colour_name, clothes.density, clothes.fk_type_name 
+    SELECT clothes.id AS item, patterns.description AS pattern_name, clothes.density AS pattern_density, clothes.fk_colour_name AS colour, clothes.fk_type_name AS type 
         FROM clothes
             JOIN patterns ON clothes.fk_pattern_id = patterns.id
             WHERE clothes.fk_resident_id IS NULL;
