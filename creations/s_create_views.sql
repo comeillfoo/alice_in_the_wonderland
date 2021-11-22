@@ -31,8 +31,9 @@ CREATE OR REPLACE VIEW clothes_catalogue AS
             WHERE clothes.fk_resident_id IS NULL;
 
 CREATE OR REPLACE VIEW kingdoms_show_residents AS
-    SELECT residents.name, registrations.fk_kingdom_id
+    SELECT residents.name, residents.fk_sex_name, residents.fk_suit_name, residents.fk_role_name, kingdoms.fk_suit_name AS
         FROM residents
             JOIN residences ON residents.id = residences.fk_resident_id
             JOIN registrations ON residences.fk_registration_id = registrations.id
+            JOIN kingdoms ON registrations.fk_kingdom_id = kingdoms.id
             ORDER BY registrations.fk_kingdom_id;
