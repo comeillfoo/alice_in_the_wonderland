@@ -33,6 +33,6 @@ CREATE OR REPLACE VIEW clothes_catalogue AS
 CREATE OR REPLACE VIEW kingdoms_show_residents AS
     SELECT *
         FROM residents
-            JOIN residences ON residents.id = residents.fk_resident_id
+            JOIN residences ON residents.id = residences.fk_resident_id
             JOIN registrations ON residences.fk_registration_id = registrations.id
             ORDER BY registrations.fk_kingdom_id;
