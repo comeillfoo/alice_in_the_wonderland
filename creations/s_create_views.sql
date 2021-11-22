@@ -4,3 +4,8 @@ CREATE OR REPLACE VIEW leaders_show_generations AS
             JOIN residents ON leaders.fk_resident_id = residents.id
             JOIN kingdoms ON leaders.fk_kingdom_id = kingdoms.id
             ORDER BY kingdoms.fk_suit_name, leaders.kingdom_reign_enddate DESC;
+
+CREATE OR REPLACE VIEW kingdoms_count_tools AS
+    SELECT fk_kingdom_id, count( id )
+        FROM tools
+        GROUP BY fk_kingdom_id;
