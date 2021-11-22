@@ -5,3 +5,5 @@ DROP VIEW IF EXISTS kingdoms_count_weapons CASCADE;
 DROP VIEW IF EXISTS clothes_catalogue CASCADE;
 DROP VIEW IF EXISTS kingdoms_show_residents CASCADE;
 DROP VIEW IF EXISTS kingdoms_count_gardeners CASCADE;
+DROP VIEW IF EXISTS kingdoms_count_soldiers CASCADE;
+DROP VIEW IF EXISTS kingdoms_count_courtiers CASCADE;

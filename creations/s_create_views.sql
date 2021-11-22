@@ -43,3 +43,15 @@ CREATE OR REPLACE VIEW kingdoms_count_gardeners AS
         FROM kingdoms_show_residents
         WHERE role = 'садовник'
         GROUP BY kingdom;
+
+CREATE OR REPLACE VIEW kingdoms_count_soldiers AS
+    SELECT kingdom, count( role ) AS soldiers
+        FROM kingdoms_show_residents
+        WHERE role = 'солдат'
+        GROUP BY kingdom;
+
+CREATE OR REPLACE VIEW kingdoms_count_courtiers AS
+    SELECT kingdom, count( role ) AS courtiers
+        FROM kingdoms_show_residents
+        WHERE role = 'придворный'
+        GROUP BY kingdom;
