@@ -37,3 +37,8 @@ CREATE OR REPLACE VIEW kingdoms_show_residents AS
             JOIN registrations ON residences.fk_registration_id = registrations.id
             JOIN kingdoms ON kingdoms.id = registrations.fk_kingdom_id 
             ORDER BY kingdoms.id;
+
+CREATE OR REPLACE VIEW kingdoms_count_gardeners AS
+    SELECT kingdom, count( role ) AS gardeners
+        FROM kingdoms_show_residents
+        GROUP BY role HAVING role = 'садовник';
