@@ -5,6 +5,13 @@ CREATE OR REPLACE VIEW leaders_show_generations AS
             JOIN kingdoms ON leaders.fk_kingdom_id = kingdoms.id
             ORDER BY kingdoms.fk_suit_name, leaders.kingdom_reign_enddate DESC;
 
+CREATE OR REPLACE VIEW leaders_count_courtiers AS
+    SELECT residents.name, count( worships.fk_courtier_id ) AS courtier
+        FROM worships
+            JOIN leaders ON leaders.id = worships.fk_leader_id
+            JOIN residents ON leaders.fk_resident_id = residents.id
+            GROUP BY residents.id, residents.name;
+
 CREATE OR REPLACE VIEW kingdoms_count_tools AS
     SELECT kingdoms.fk_suit_name AS kingdom, count( tools.id ) AS tools_number
         FROM tools
