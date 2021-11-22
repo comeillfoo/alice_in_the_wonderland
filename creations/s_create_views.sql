@@ -59,11 +59,11 @@ CREATE OR REPLACE VIEW kingdoms_count_courtiers AS
 CREATE OR REPLACE VIEW kingdoms_count_males AS
     SELECT kingdom, count( sex ) AS males
         FROM kingdoms_show_residents
-        WHERE role = 'мужчина'
+        WHERE sex = 'мужчина'
         GROUP BY kingdom;
 
 CREATE OR REPLACE VIEW kingdoms_count_females AS
     SELECT kingdom, count( sex ) AS females
         FROM kingdoms_show_residents
-        WHERE role = 'женщина'
+        WHERE sex = 'женщина'
         GROUP BY kingdom;
