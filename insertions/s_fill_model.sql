@@ -16,3 +16,5 @@
 \i e_tools.sql
 \i e_weapons.sql
 \i e_worships.sql
+
+\i ../creations/s_create_indeces.sql
