@@ -13,25 +13,25 @@ CREATE OR REPLACE VIEW leaders_count_courtiers AS
             GROUP BY residents.id, residents.name;
 
 CREATE OR REPLACE VIEW kingdoms_count_tools AS
-    SELECT kingdoms.fk_suit_name AS kingdom, count( tools.id ) AS tools_number
+    SELECT row_number() over() as id, kingdoms.fk_suit_name AS kingdom, count( tools.id ) AS tools_number
         FROM tools
             JOIN kingdoms ON tools.fk_kingdom_id = kingdoms.id
             GROUP BY kingdoms.fk_suit_name;
 
 CREATE OR REPLACE VIEW kingdoms_count_weapons AS
-    SELECT kingdoms.fk_suit_name AS kingdom, count( weapons.id ) AS weapons_number
+    SELECT row_number() over() as id, kingdoms.fk_suit_name AS kingdom, count( weapons.id ) AS weapons_number
         FROM weapons
             JOIN kingdoms ON weapons.fk_kingdom_id = kingdoms.id
             GROUP BY kingdoms.fk_suit_name;
 
 CREATE OR REPLACE VIEW clothes_catalogue AS
-    SELECT clothes.id AS item, patterns.description AS pattern_name, clothes.density AS pattern_density, clothes.fk_colour_name AS colour, clothes.fk_type_name AS type 
+    SELECT row_number() over() as id, clothes.id AS item, patterns.description AS pattern_name, clothes.density AS pattern_density, clothes.fk_colour_name AS colour, clothes.fk_type_name AS type 
         FROM clothes
             JOIN patterns ON clothes.fk_pattern_id = patterns.id
             WHERE clothes.fk_resident_id IS NULL;
 
 CREATE OR REPLACE VIEW kingdoms_show_residents AS
-    SELECT residents.name AS name, residents.fk_sex_name AS sex, residents.fk_suit_name AS resident_suit, residents.fk_role_name AS role, kingdoms.fk_suit_name AS kingdom
+    SELECT row_number() over() as id, residents.name AS name, residents.fk_sex_name AS sex, residents.fk_suit_name AS resident_suit, residents.fk_role_name AS role, kingdoms.fk_suit_name AS kingdom
         FROM residents
             JOIN residences ON residents.id = residences.fk_resident_id
             JOIN registrations ON residences.fk_registration_id = registrations.id
@@ -39,31 +39,31 @@ CREATE OR REPLACE VIEW kingdoms_show_residents AS
             ORDER BY kingdoms.id;
 
 CREATE OR REPLACE VIEW kingdoms_count_gardeners AS
-    SELECT kingdom, count( role ) AS gardeners
+    SELECT row_number() over() as id, kingdom, count( role ) AS gardeners
         FROM kingdoms_show_residents
         WHERE role = 'садовник'
         GROUP BY kingdom;
 
 CREATE OR REPLACE VIEW kingdoms_count_soldiers AS
-    SELECT kingdom, count( role ) AS soldiers
+    SELECT row_number() over() as id, kingdom, count( role ) AS soldiers
         FROM kingdoms_show_residents
         WHERE role = 'солдат'
         GROUP BY kingdom;
 
 CREATE OR REPLACE VIEW kingdoms_count_courtiers AS
-    SELECT kingdom, count( role ) AS courtiers
+    SELECT row_number() over() as id, kingdom, count( role ) AS courtiers
         FROM kingdoms_show_residents
         WHERE role = 'придворный'
         GROUP BY kingdom;
 
 CREATE OR REPLACE VIEW kingdoms_count_males AS
-    SELECT kingdom, count( sex ) AS males
+    SELECT row_number() over() as id, kingdom, count( sex ) AS males
         FROM kingdoms_show_residents
         WHERE sex = 'мужчина'
         GROUP BY kingdom;
 
 CREATE OR REPLACE VIEW kingdoms_count_females AS
-    SELECT kingdom, count( sex ) AS females
+    SELECT row_number() over() as id, kingdom, count( sex ) AS females
         FROM kingdoms_show_residents
         WHERE sex = 'женщина'
         GROUP BY kingdom;
