@@ -4,5 +4,5 @@ CREATE TABLE IF NOT EXISTS tools (
     fk_kingdom_id serial NOT NULL,
     FOREIGN KEY( fk_kingdom_id ) REFERENCES kingdoms( id ),
     fk_resident_id serial NOT NULL,
-    FOREIGN KEY( fk_resident_id ) REFERENCES residents( id )
+    FOREIGN KEY( fk_resident_id ) REFERENCES residents( id ) ON DELETE CASCADE
 );
