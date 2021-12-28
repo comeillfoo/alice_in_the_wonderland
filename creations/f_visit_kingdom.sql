@@ -14,7 +14,7 @@ $BODY$
 
         IF is_already_live_here THEN
             RAISE INFO 'residents( % ) already registered to desired kingdom', resident;
-            RETURN;
+            RETURN 1;
         END IF;
 
         INSERT INTO registrations VALUES ( DEFAULT, dest_kingdom, CURRENT_DATE, CURRENT_DATE + spandays * INTERVAL '1 day' ) RETURNING id INTO guest_pass_id;
