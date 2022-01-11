@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION coronate (
     IN new_leader_id integer
-) RETURNS void AS
+) RETURNS integer AS
 $BODY$
     DECLARE
         old_leader_id integer := ( SELECT id FROM leaders WHERE kingdom_reign_enddate IS NULL AND fk_kingdom_id = ( SELECT fk_kingdom_id FROM leaders WHERE id = new_leader_id ) );
@@ -13,6 +13,8 @@ $BODY$
         UPDATE leaders
         SET kingdom_reign_enddate = NULL, fk_crown_id = old_leader_crown_id
         WHERE id = new_leader_id;
+
+        RETURN 1;
     END;
 $BODY$
 LANGUAGE 'plpgsql' VOLATILE;
